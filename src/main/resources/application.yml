@@ -1,14 +1,11 @@
 spring:
  application:
   name: demoJPA
-
- datasource:
-  url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/unla_test
-  username: myuser
-  password: 
-  driver-class-name: com.mysql.cj.jdbc.Driver
-
  jpa:
-   hibernate:
-    ddl-auto: update
+  hibernate:
+   ddl-auto: update
+ datasource:
+   url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/unla_test
+   username: myuser
+   driver-class-name: com.mysql.cj.jdbc.Driver
 #spring.jpa.show-sql: true

@@ -1,5 +1,4 @@
-
-package entity;
+package com.example.demoJPA.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,17 +12,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "cliente")
-public class Cliente {
+@Table(name = "admin")
+public class Admin {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "clientePremium")
-	private boolean clientePremium;
+	@Column(name = "cuil")
+	private long cuil;
 
-	public Cliente(boolean clientePremium) {
+	public Admin(long cuil) {
 		super();
-		this.clientePremium = clientePremium;
+		this.cuil = cuil;
 	}
 
 }

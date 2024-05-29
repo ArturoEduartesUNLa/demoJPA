@@ -1,5 +1,7 @@
 
-package entity;
+package com.example.demoJPA.entity;
+
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,28 +17,27 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "productoVendido")
-public class ProductoVendido {
+@Table(name = "pedidoCompra")
+public class PedidoCompra {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "producto")
 	private Producto producto;
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "venta")
-	private Venta venta;
-	@Column(name = "cantidad")
-	private int cantidad;
-	@Column(name = "precioTotal")
-	private double precioTotal;
+	@Column(name = "fechaLanzamiento")
+	private LocalDate fechaLanzamiento;
+	@Column(name = "comprado")
+	private boolean comprado;
+	@Column(name = "cantidadSolicitada")
+	private int cantidadSolicitada;
 
-	public ProductoVendido(Producto producto, Venta venta, int cantidad, double precioTotal) {
+	public PedidoCompra(Producto producto, LocalDate fechaLanzamiento, boolean comprado, int cantidadSolicitada) {
 		super();
 		this.producto = producto;
-		this.venta = venta;
-		this.cantidad = cantidad;
-		this.precioTotal = precioTotal;
+		this.fechaLanzamiento = fechaLanzamiento;
+		this.comprado = comprado;
+		this.cantidadSolicitada = cantidadSolicitada;
 	}
 
 }

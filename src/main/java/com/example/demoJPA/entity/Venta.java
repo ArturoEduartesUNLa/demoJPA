@@ -1,5 +1,5 @@
 
-package entity;
+package com.example.demoJPA.entity;
 
 import java.time.LocalDate;
 import java.util.Set;
