@@ -2,6 +2,7 @@ spring:
  application:
   name: demoJPA
  jpa:
+  open-in-view: true 
   hibernate:
    ddl-auto: update
  datasource:
